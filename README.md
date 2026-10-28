@@ -37,6 +37,18 @@ An **orchestrator agent** plans the run, dispatches each phase and resumes after
 - **Deliverables people already use.** Reports export as Word documents and the final deck as PowerPoint, straight from the panel.
 - **Production hardening.** A database quota problem in production was traced to the live panel's polling. Loading report contents only on demand cut the data pulled per refresh by about 78%. A daily keep-alive job and a plan change keep the database from pausing.
 
+## Screens
+
+The live panel the agency team works in. Client names are replaced with fictional ones.
+
+**Pipeline.** Every step with its measured duration. The run is paused at the concept-choice gate, waiting for a human decision.
+
+![Pipeline progress in the live panel](docs/screens/pipeline.png)
+
+**The agent cast.** Each agent's live state (done, waiting on you, idle), level and output count, next to the run's event feed: QA scores, revisions and phase changes.
+
+![Agent cast and live event feed](docs/screens/agents.png)
+
 ## Stack
 
 TypeScript · Next.js · [eve](https://eve.dev) (Vercel's agent framework, durable workflows) · Claude Opus / Sonnet / Haiku via AI Gateway · MCP · Zod · Supabase Postgres · Vercel Blob · docx / PPTX generation · Vercel
